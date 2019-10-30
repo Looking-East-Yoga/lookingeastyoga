@@ -8,7 +8,7 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby & Contentful Starter',
+    title: 'Template',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,12 +20,6 @@ module.exports = {
         spaceId,
         accessToken,
       },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: ['Quicksand:400,700'],
-      },
-    },
+    }
   ],
 };

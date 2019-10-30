@@ -1,48 +1,43 @@
 import React from 'react';
+import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
-import moment from 'moment';
 import Layout from '../components/Layout';
+import Main from '../components/Main';
+import Hero from '../components/Hero';
+import Aside from '../components/Aside';
 
 const HomePage = () => (
   <StaticQuery
     query={graphql`
       query HomePage {
-        contentfulHomePage {
-          title
-          date
-          image {
-            file {
-              url
-            }
-          }
-          content {
-            childMarkdownRemark {
-              html
-            }
+        contentfulPages(slug: {eq: "index"}) {
+          title,
+          subtitle,
+          body {
+            body
           }
         }
       }
     `}
     render={({
-      contentfulHomePage: {
+      contentfulPages: {
         title,
-        date,
-        image: {
-          file: { url, fileName },
-        },
-        content: {
-          childMarkdownRemark: { html },
-        },
-      },
+        subtitle,
+        body:{body}
+      }
     }) => (
       <Layout>
-        <h1>{title}</h1>
-        <small>Created on {moment(date).format('L')}</small>
-        <article dangerouslySetInnerHTML={{ __html: html }} />
-        <article>
-          <h1>And Also an Image</h1>
-          <img src={url} alt={fileName} />
-        </article>
+        <Main>
+          <Hero>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+          </Hero>
+          <p>{body}</p>
+        </Main>
+        <Aside>
+          Hello I'm index
+        </Aside>
+        
       </Layout>
     )}
   />
