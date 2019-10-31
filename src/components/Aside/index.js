@@ -1,24 +1,46 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components';
+import Button from '../Button';
 
 const StyledAside = styled.aside`
     flex: 1;
     margin:2rem 0 0;
     padding:0 2rem;
+    >h2{
+        font-size: ${({ theme }) => theme.fontSizes.size3};
+    }
+    >p,>li{
+        font-size: ${({ theme }) => theme.fontSizes.size1};
+    }
     @media (min-width: ${props => props.theme.breakpoints.sm}) {
-        width:40%;
-        padding:0 2% 0 2rem;
         border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .social-link{
+        transition:all 200ms;
+        &:hover{
+            opacity:0.7;
+        }
     }
 `;
 class Aside extends React.Component {
     render () {
-		const{data} = this.props;
+		const{data,children,showContact} = this.props;
 		console.log(data);
         return (
           <StyledAside role="complementary">
-              {this.props.children}
+            {showContact == true &&
+                <>
+                <h2>Contact</h2>
+                <Button href="mailto:stacey@lookingeastyoga.com">
+                    stacey@lookingeastyoga.com
+                </Button>
+                <p>
+                    <a href="https://www.facebook.com/lookingeastyoga/" class="social-link" target="_blank"><img src="/assets/graphics/facebook.png" height="48" alt="Find Looking East Yoga on Facebook"/></a>&nbsp;
+                    <a href="https://www.instagram.com/lookingeastyoga/" class="social-link" target="_blank"><img src="/assets/graphics/instagram.png" height="48" alt="Find Looking East Yoga on Instagram"/></a>
+                </p>
+                </>
+            }
+            {children}
           </StyledAside>
         );
 	}

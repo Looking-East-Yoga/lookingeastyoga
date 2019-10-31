@@ -7,13 +7,25 @@ const StyledHeader = styled.header`
 	padding:1rem 0 2rem;
 	text-align: center;
 	overflow: hidden;
-  border-bottom: 3px solid rgba(253,173,53,1.0);
+  border-bottom: 3px solid ${props => props.theme.colors.orange};
+  >.title{
+    position: relative;
+    margin-top:3rem;
+    font-size:3rem;
+    color:${props => props.theme.colors.grey90};
+    z-index:1;
+    text-shadow:0 0 40px rgba(0,0,0,0.3);
+    vertical-align: middle;
+  }
   >img{
     position: relative;
     z-index:1;
     width: 100%;
     max-width:200px;
     vertical-align: middle;
+  }
+  >img.small{
+    max-width:150px;
   }
   span{
     position:absolute;
@@ -51,9 +63,18 @@ const StyledHeader = styled.header`
 
 class Header extends React.Component {
     render () {
+        const {headerTitle} = this.props;
         return (
           <StyledHeader role="banner">
-              <img src="/assets/images/LookingEast_Vert_Solid_NoTag.png"/>
+              {headerTitle == undefined &&
+                <img src="/assets/graphics/lookingeastyoga-logo.png"/>
+              }
+              {headerTitle !== undefined &&
+                <img className="small" src="/assets/graphics/lookingeastyoga-logo.png"/>
+              }
+              {headerTitle !== undefined &&
+                <div className="title">{headerTitle}</div>
+              }
               <span>
                 <img src={this.props.backgroundUrl}/>
               </span>

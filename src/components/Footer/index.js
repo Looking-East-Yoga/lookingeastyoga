@@ -3,18 +3,32 @@ import moment from 'moment';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-  color: ${props => props.theme.footer.color};
-  background: ${props => props.theme.footer.background};
-  padding: 20px 20px 10px;
-  font-size: 14px;
-  text-align: center;
+	position: relative;
+	margin:2rem 0 0;
+	padding:2rem 3rem 1rem;
+	font-size:1rem;
+	background: rgba(0,0,0,0.2);
+	overflow: hidden;
+	border-top: 3px solid rgba(253,173,53,1.0);
+	h2{
+		font-size:2rem;
+		line-height: 2.75rem;
+		font-style: italic;
+		font-weight:300;
+		text-align: center;
+	}
 `;
 const dateYear = moment().format('YYYY'); 
 class Footer extends React.Component {
     render () {
         return (
           <StyledFooter role="contentinfo">
-              &copy; {dateYear}
+            <h2>
+              “If you work on Yoga, Yoga will work on you.”
+              <br />
+              <small>Baba Hari Dass</small>
+            </h2>
+				    <p>&copy; {dateYear} Looking East LLC.</p>
           </StyledFooter>
         );
     }

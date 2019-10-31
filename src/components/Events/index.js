@@ -1,5 +1,6 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby';
+import Button from '../Button';
 import styled from 'styled-components';
 
 const StyledEvents = styled.ul`
@@ -9,7 +10,7 @@ const StyledEvents = styled.ul`
 		font-size: 0.85rem;
 	}
 	li{
-		margin:0 0 1rem;
+		margin:0 0 2rem;
 		padding:0;
 		list-style: none;
 		font-size: 0.85rem;
@@ -27,11 +28,17 @@ const StyledEvents = styled.ul`
 		height:auto;
 		width:100%;
 	}
-	li h3, li p{
+	li h3{
 		margin:0 0 0.5rem;
 		padding:0;
-	}
+    }
+    li h3 small{
+        display:block;
+        padding-top:4px;
+    }
 	li p{
+        margin:0;
+		padding:0;
 		line-height: 1.15rem;
     }
 `;
@@ -61,11 +68,11 @@ const Events = () => {
             {data.allContentfulEvents.edges.map(( {node} ) => {
             return (
                 <li key={node.contentful_id}>
-                    <h3>{node.title}</h3>
+                    <h3>{node.title}&nbsp;<small>{node.date}</small></h3>
                     <p>{node.description.description}</p>
-                    <p>{node.date}</p>
+                    
                     {node.link !== null &&
-                        <p><a href={node.link}>Learn more</a></p>
+                        <p><Button size="small" color="black" href={node.link}>Learn more</Button></p>
                     }
                 </li>
             )

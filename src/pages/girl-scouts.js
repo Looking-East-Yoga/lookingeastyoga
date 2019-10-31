@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Main from '../components/Main';
 import Hero from '../components/Hero';
+import Markdown from '../components/Markdown';
 import Aside from '../components/Aside';
 
 const HomePage = () => (
@@ -15,6 +16,9 @@ const HomePage = () => (
           subtitle,
           body {
             body
+          },
+          secondary{
+            secondary
           }
         }
       }
@@ -23,19 +27,19 @@ const HomePage = () => (
       contentfulPages: {
         title,
         subtitle,
-        body:{body}
+        body:{body},
+        secondary:{secondary}
       }
     }) => (
-      <Layout>
+      <Layout headerTitle={subtitle} headerBackground="/assets/images/background-02.jpg">
         <Main>
           <Hero>
             <h1>{title}</h1>
-            <h2>{subtitle}</h2>
           </Hero>
-          <p>{body}</p>
+          <Markdown value={body} />
         </Main>
         <Aside>
-          Hello I'm index
+          <Markdown value={secondary} />
         </Aside>
         
       </Layout>

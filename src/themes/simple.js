@@ -1,11 +1,16 @@
 const colors = {
-  white: '#ffffff',
-  grey10: '#f3f4f8',
-  grey20: '#e1e5eb',
-  grey30: '#c2c6cc',
-  grey40: '#9ea2a8',
-  grey50: '#686c73',
-  grey60: '#30363d'
+  orange: '#FDAD35',
+  white:  '#F2F2F2',
+  grey10: '#E5E5E5',
+  grey20: '#CCCCCC',
+  grey30: '#B2B2B2',
+  grey40: '#999999',
+  grey50: '#7F7F7F',
+  grey60: '#666666',
+  grey70: '#4C4C4C',
+  grey80: '#3F3F3F',
+  grey90: '#262626',
+  black:  '#0C0C0C'
 }
 const breakpoints = {
   sm:'37.50rem', 
@@ -13,8 +18,8 @@ const breakpoints = {
   lg: '64.06rem'
 }
 const fontSizes = {
-  size1: '1.0rem', 
-  size2: '1.4rem', 
+  size1: '0.85rem', 
+  size2: '1.0rem', 
   size3: '1.6rem', 
   size4: '1.8rem', 
   size5: '2.4rem', 

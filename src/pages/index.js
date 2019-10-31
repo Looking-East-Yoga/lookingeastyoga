@@ -37,7 +37,7 @@ const HomePage = () => (
           </Hero>
           <p>{body}</p>
         </Main>
-        <Aside>
+        <Aside showContact={true}>
           <Events/>
         </Aside>
         

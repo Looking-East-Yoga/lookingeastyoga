@@ -11,26 +11,27 @@ const StyledContainer = styled.div`
 `;
 const StyledSection = styled.section`
   display:grid;
-  grid-template-columns: auto 320px;
-  // grid-column-gap: 16px;
+  grid-template-columns: auto 40%;
+  align-items:stretch;
   h1,h2,h3,h4,h5,p,li{
-    color: ${props => props.theme.body.text};
+    color: ${props => props.theme.colors.grey80};
   }
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     display: block;
+    grid-template-columns: auto 320px;
   }
 `;
 
 class Layout extends React.Component {
   
   render(){
-    const {headerBackground} = this.props;
+    const {headerTitle, headerBackground} = this.props;
     return (
       <ThemeProvider theme={lightSimple}>
         <>
           <GlobalStyles />
           <StyledContainer>
-            <Header backgroundUrl={headerBackground} />
+            <Header headerTitle={headerTitle} backgroundUrl={headerBackground} />
             <StyledSection>
               {this.props.children}
             </StyledSection>
