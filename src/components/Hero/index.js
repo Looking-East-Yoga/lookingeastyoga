@@ -2,10 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledHero = styled.div`
-  padding: 0 24px;
   color: ${props => props.theme.main.color};
-  border-bottom:1px solid ${props => props.theme.colors.grey60};
-  background: ${props => props.theme.colors.grey30};
+  h1{
+    margin:0;
+    padding: 1.25rem 0 0.5rem;
+    font-size: 1.75rem;
+    font-weight:light;
+  }
+  h1>small{
+    display: block;
+    margin:0.25rem 0 0;
+    padding:0;
+    color:rgba(0,0,0,0.5);
+    font-size: 1rem;
+  }
 `;
 
 class Hero extends React.Component {

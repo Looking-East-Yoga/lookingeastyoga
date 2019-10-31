@@ -5,13 +5,12 @@ import Layout from '../components/Layout';
 import Main from '../components/Main';
 import Hero from '../components/Hero';
 import Aside from '../components/Aside';
-import Events from '../components/Events';
 
 const HomePage = () => (
   <StaticQuery
     query={graphql`
-      query HomePage {
-        contentfulPages(slug: {eq: "index"}) {
+      query GirlScoutsEventsPage {
+        contentfulPages(slug: {eq: "girls-scouts-events"}) {
           title,
           subtitle,
           body {
@@ -27,18 +26,16 @@ const HomePage = () => (
         body:{body}
       }
     }) => (
-      <Layout headerBackground="/assets/images/background-homepage.jpg">
+      <Layout>
         <Main>
           <Hero>
-            <h1>
-              {title}
-              <small>{subtitle}</small>
-            </h1>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
           </Hero>
           <p>{body}</p>
         </Main>
         <Aside>
-          <Events/>
+          Hello I'm index
         </Aside>
         
       </Layout>

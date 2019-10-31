@@ -16,21 +16,21 @@ const StyledSection = styled.section`
   h1,h2,h3,h4,h5,p,li{
     color: ${props => props.theme.body.text};
   }
-  @media (max-width: 640px) {
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
     display: block;
   }
 `;
 
 class Layout extends React.Component {
+  
   render(){
+    const {headerBackground} = this.props;
     return (
       <ThemeProvider theme={lightSimple}>
         <>
           <GlobalStyles />
           <StyledContainer>
-            <Header>
-              HEADER
-            </Header>
+            <Header backgroundUrl={headerBackground} />
             <StyledSection>
               {this.props.children}
             </StyledSection>

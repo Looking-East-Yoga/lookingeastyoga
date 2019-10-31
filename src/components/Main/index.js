@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledMain = styled.main`
     flex: 1;
-    padding: 24px 0;
+    padding: 0 2rem;
     color: ${props => props.theme.main.color};
     background: ${props => props.theme.main.background};
     h1{

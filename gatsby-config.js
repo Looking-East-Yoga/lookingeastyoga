@@ -20,6 +20,12 @@ module.exports = {
         spaceId,
         accessToken,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ['Open+Sans:300'],
+      },
+    },
   ],
 };

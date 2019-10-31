@@ -7,9 +7,13 @@ const colors = {
   grey50: '#686c73',
   grey60: '#30363d'
 }
-const breakpoints = ['31.25em', '43.75em', '46.875em'];
+const breakpoints = {
+  sm:'37.50rem', 
+  md: '47.94rem', 
+  lg: '64.06rem'
+}
 const fontSizes = {
-  size1: '1.2rem', 
+  size1: '1.0rem', 
   size2: '1.4rem', 
   size3: '1.6rem', 
   size4: '1.8rem', 
@@ -20,8 +24,8 @@ const fontSizes = {
   size9: '4.8rem', 
   size10: '6.4rem'
 }
-const space = ['0', '.4rem', '.8rem', '1.2rem', '1.6rem', '2.0rem', '3.2rem', '4.8rem', '6.4rem', '9.6rem'];
 export const lightSimple = {
+  breakpoints: breakpoints,
   fontSizes: fontSizes,
   colors: colors,
   body:{
