@@ -7,6 +7,10 @@ import Hero from '../components/Hero';
 import Markdown from '../components/Markdown';
 import Aside from '../components/Aside';
 
+const StyledPage = styled.div`
+
+`;
+
 const HomePage = () => (
   <StaticQuery
     query={graphql`
@@ -31,18 +35,19 @@ const HomePage = () => (
         secondary:{secondary}
       }
     }) => (
-      <Layout headerTitle={subtitle} headerBackground="/assets/images/background-02.jpg">
-        <Main>
-          <Hero>
-            <h1>{title}</h1>
-          </Hero>
-          <Markdown value={body} />
-        </Main>
-        <Aside>
-          <Markdown value={secondary} />
-        </Aside>
-        
-      </Layout>
+      <StyledPage>
+        <Layout headerTitle={subtitle} headerBackground="/assets/images/background-02.jpg">
+            <Main>
+              <Hero>
+                <h1>{title}</h1>
+              </Hero>
+              <Markdown value={body} />
+            </Main>
+            <Aside>
+              <Markdown value={secondary} />
+            </Aside>
+        </Layout>
+      </StyledPage>
     )}
   />
 );

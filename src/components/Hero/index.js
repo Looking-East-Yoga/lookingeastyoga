@@ -7,6 +7,7 @@ const StyledHero = styled.div`
     margin:0;
     padding: 1.25rem 0 0.5rem;
     font-size: ${({ theme }) => theme.fontSizes.size4};
+    line-height:120%;
   }
   >h1>small{
     display: block;

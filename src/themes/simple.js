@@ -13,9 +13,12 @@ const colors = {
   black:  '#0C0C0C'
 }
 const breakpoints = {
-  sm:'37.50rem', 
-  md: '47.94rem', 
-  lg: '64.06rem'
+  xs:'439px', 
+  sm: '767px', 
+  md: '1023px',
+  lg: '1365px',
+  xl: '1599px',
+  xx: '1919px'
 }
 const fontSizes = {
   size1: '0.85rem', 

@@ -7,9 +7,9 @@ const StyledFooter = styled.footer`
 	margin:2rem 0 0;
 	padding:2rem 3rem 1rem;
 	font-size:1rem;
-	background: rgba(0,0,0,0.2);
 	overflow: hidden;
-	border-top: 3px solid rgba(253,173,53,1.0);
+	border-top: 2px solid ${props => props.theme.colors.grey30};
+	background: ${props => props.theme.colors.grey10};
 	h2{
 		font-size:2rem;
 		line-height: 2.75rem;

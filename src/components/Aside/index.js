@@ -34,10 +34,10 @@ class Aside extends React.Component {
                 <Button href="mailto:stacey@lookingeastyoga.com">
                     stacey@lookingeastyoga.com
                 </Button>
-                <p>
+                <div>
                     <a href="https://www.facebook.com/lookingeastyoga/" class="social-link" target="_blank"><img src="/assets/graphics/facebook.png" height="48" alt="Find Looking East Yoga on Facebook"/></a>&nbsp;
                     <a href="https://www.instagram.com/lookingeastyoga/" class="social-link" target="_blank"><img src="/assets/graphics/instagram.png" height="48" alt="Find Looking East Yoga on Instagram"/></a>
-                </p>
+                </div>
                 </>
             }
             {children}
