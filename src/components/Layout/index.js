@@ -25,17 +25,17 @@ const StyledSection = styled.section`
 class Layout extends React.Component {
   
   render(){
-    const {headerTitle, headerBackground} = this.props;
+    const {headerProps, footerProps} = this.props;
     return (
       <ThemeProvider theme={lightSimple}>
         <>
           <GlobalStyles />
           <StyledContainer>
-            <Header headerTitle={headerTitle} backgroundUrl={headerBackground} />
+            <Header {...headerProps} />
             <StyledSection>
               {this.props.children}
             </StyledSection>
-            <Footer/>
+            <Footer {...footerProps}/>
           </StyledContainer>
         </>
       </ThemeProvider>

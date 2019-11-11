@@ -1,6 +1,6 @@
 const colors = {
   orange: '#FDAD35',
-  white:  '#F2F2F2',
+  white:  '#FFFFFF',
   grey10: '#E5E5E5',
   grey20: '#CCCCCC',
   grey30: '#B2B2B2',
@@ -53,7 +53,7 @@ export const lightSimple = {
   },
   aside:{
     color:colors.grey60,
-    background:colors.grey30
+    background:colors.white
   },
   card:{
     color:colors.grey60,

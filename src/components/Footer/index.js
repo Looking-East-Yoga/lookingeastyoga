@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import moment from 'moment';
 import styled from 'styled-components';
 
@@ -8,8 +9,15 @@ const StyledFooter = styled.footer`
 	padding:2rem 3rem 1rem;
 	font-size:1rem;
 	overflow: hidden;
-	border-top: 2px solid ${props => props.theme.colors.grey30};
+	border-top: 2px solid ${props => props.theme.colors.orange};
 	background: ${props => props.theme.colors.grey10};
+	.logo{
+		text-align:center;
+		img{
+			height:180px;
+			width:auto;
+		}
+	}
 	h2{
 		font-size:2rem;
 		line-height: 2.75rem;
@@ -21,8 +29,12 @@ const StyledFooter = styled.footer`
 const dateYear = moment().format('YYYY'); 
 class Footer extends React.Component {
     render () {
+		const {logo} = this.props;
         return (
           <StyledFooter role="contentinfo">
+			{logo !== undefined && logo !== false &&
+				<div className="logo"><Link to="/"><img src={logo} /></Link></div>
+			}
             <h2>
               “If you work on Yoga, Yoga will work on you.”
               <br />

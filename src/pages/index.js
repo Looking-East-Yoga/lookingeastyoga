@@ -7,6 +7,13 @@ import Hero from '../components/Hero';
 import Aside from '../components/Aside';
 import Events from '../components/Events';
 
+const headerOverrides = `
+  span img{
+    opacity: 0.3;
+    filter:none;
+  }
+`;
+
 const HomePage = () => (
   <StaticQuery
     query={graphql`
@@ -27,7 +34,10 @@ const HomePage = () => (
         body:{body}
       }
     }) => (
-      <Layout headerBackground="/assets/images/background-homepage.jpg">
+      <Layout headerProps={{
+          styles:headerOverrides,
+          background:"/assets/images/background-homepage.jpg"
+      }}>
         <Main>
           <Hero>
             <h1>

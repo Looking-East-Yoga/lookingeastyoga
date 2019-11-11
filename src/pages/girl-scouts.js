@@ -10,6 +10,20 @@ import Aside from '../components/Aside';
 const StyledPage = styled.div`
 
 `;
+const headerOverrides = `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    padding:0 !important;
+    >.title{
+      margin:0  !important;
+      padding:0  !important;
+    }
+  span img{
+    opacity: 0.3;
+    filter:none;
+  }
+`;
 
 const HomePage = () => (
   <StaticQuery
@@ -30,13 +44,23 @@ const HomePage = () => (
     render={({
       contentfulPages: {
         title,
-        subtitle,
+        subtitle, 
         body:{body},
         secondary:{secondary}
       }
     }) => (
       <StyledPage>
-        <Layout headerTitle={subtitle} headerBackground="/assets/images/background-02.jpg">
+        <Layout 
+          headerProps={{
+            title:subtitle,
+            styles:headerOverrides,
+            logo:false,
+            background:"/assets/images/background-01.jpg"
+          }}
+          footerProps={{
+            logo:"/assets/graphics/lookingeastyoga-logo-withtag.png"
+          }}
+        >
             <Main>
               <Hero>
                 <h1>{title}</h1>

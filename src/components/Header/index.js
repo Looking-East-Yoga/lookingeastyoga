@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledHeader = styled.header`
+const BaseStyles = styled.header`
   position: relative;
 	margin:0;
 	padding:1rem 0 2rem;
 	text-align: center;
 	overflow: hidden;
-  border-bottom: 2px solid ${props => props.theme.colors.grey30};
+  border-bottom: 2px solid ${props => props.theme.colors.orange};
   >.title{
     position: relative;
     margin-top:1rem;
@@ -90,20 +90,23 @@ const StyledHeader = styled.header`
 
 class Header extends React.Component {
     render () {
-        const {headerTitle} = this.props;
+        const {styles,title,background,logo} = this.props;
+        const StyledHeader = styled(BaseStyles)`
+          ${this.props.styles}
+        `;
         return (
-          <StyledHeader role="banner">
-              {headerTitle == undefined &&
+          <StyledHeader role="banner" styles={styles}>
+              {title == undefined &&
                 <img src="/assets/graphics/lookingeastyoga-logo.png"/>
               }
-              {headerTitle !== undefined &&
+              {title !== undefined || logo == false &&
                 <img className="small" src="/assets/graphics/lookingeastyoga-logo.png"/>
               }
-              {headerTitle !== undefined &&
-                <div className="title" dangerouslySetInnerHTML={{__html:headerTitle}} />
+              {title !== undefined &&
+                <div className="title" dangerouslySetInnerHTML={{__html:title}} />
               }
               <span>
-                <img src={this.props.backgroundUrl}/>
+                <img src={background}/>
               </span>
               {this.props.children}
           </StyledHeader>
