@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const BaseStyles = styled.header`
   position: relative;
+  height:60vw;
 	margin:0;
 	padding:1rem 0 2rem;
 	text-align: center;
@@ -12,11 +13,11 @@ const BaseStyles = styled.header`
     position: relative;
     margin-top:1rem;
     padding:0 2rem;
-    font-size:1.5rem;
+    font-size:2rem;
     line-height:120%;
     color:${props => props.theme.colors.grey90};
     z-index:1;
-    text-shadow:0 0 40px rgba(0,0,0,0.3);
+    text-shadow:0 0 20px rgba(255,255,255,0.6);
     vertical-align: middle;
   }
   >img{

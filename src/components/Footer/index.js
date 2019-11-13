@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
 	.logo{
 		text-align:center;
 		img{
-			height:180px;
+			height:130px;
 			width:auto;
 		}
 	}
