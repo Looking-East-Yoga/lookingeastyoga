@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Main from '../components/Main';
 import Hero from '../components/Hero';
+import Gallery from '../components/Gallery';
 import Aside from '../components/Aside';
 import Events from '../components/Events';
 
@@ -46,6 +47,7 @@ const HomePage = () => (
             </h1>
           </Hero>
           <p>{body}</p>
+          <Gallery/>
         </Main>
         <Aside showContact={true}>
           <Events/>

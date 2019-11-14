@@ -11,8 +11,8 @@ const StyledFooter = styled.footer`
 	overflow: hidden;
 	border-top: 2px solid ${props => props.theme.colors.orange};
 	background: ${props => props.theme.colors.grey10};
+	text-align:center;
 	.logo{
-		text-align:center;
 		img{
 			height:130px;
 			width:auto;
@@ -23,7 +23,9 @@ const StyledFooter = styled.footer`
 		line-height: 2.75rem;
 		font-style: italic;
 		font-weight:300;
-		text-align: center;
+	}
+	p{
+		font-size:0.8rem;
 	}
 `;
 const dateYear = moment().format('YYYY'); 
@@ -40,7 +42,7 @@ class Footer extends React.Component {
               <br />
               <small>Baba Hari Dass</small>
             </h2>
-				    <p>&copy; {dateYear} Looking East LLC.</p>
+			<p>&copy; {dateYear} Looking East LLC.</p>
           </StyledFooter>
         );
     }

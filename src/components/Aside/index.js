@@ -24,19 +24,18 @@ const StyledAside = styled.aside`
 `;
 class Aside extends React.Component {
     render () {
-		const{data,children,showContact} = this.props;
-		console.log(data);
+		const{children,showContact} = this.props;
         return (
           <StyledAside role="complementary">
-            {showContact == true &&
+            {showContact === true &&
                 <>
                 <h2>Contact</h2>
                 <Button href="mailto:stacey@lookingeastyoga.com">
                     stacey@lookingeastyoga.com
                 </Button>
                 <div>
-                    <a href="https://www.facebook.com/lookingeastyoga/" class="social-link" target="_blank"><img src="/assets/graphics/facebook.png" height="48" alt="Find Looking East Yoga on Facebook"/></a>&nbsp;
-                    <a href="https://www.instagram.com/lookingeastyoga/" class="social-link" target="_blank"><img src="/assets/graphics/instagram.png" height="48" alt="Find Looking East Yoga on Instagram"/></a>
+                    <a href="https://www.facebook.com/lookingeastyoga/" className="social-link" target="_blank" rel="noopener noreferrer"><img src="/assets/graphics/facebook.png" height="48" alt="Find Looking East Yoga on Facebook"/></a>&nbsp;
+                    <a href="https://www.instagram.com/lookingeastyoga/" className="social-link" target="_blank" rel="noopener noreferrer"><img src="/assets/graphics/instagram.png" height="48" alt="Find Looking East Yoga on Instagram"/></a>
                 </div>
                 </>
             }

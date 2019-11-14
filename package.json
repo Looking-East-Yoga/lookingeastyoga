@@ -26,6 +26,8 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.4.0"
+    "react-instafeed": "^1.0.0",
+    "styled-components": "^4.4.0",
+    "use-abortable-fetch": "^2.6.5"
   }
 }
