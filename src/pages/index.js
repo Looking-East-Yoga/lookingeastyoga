@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Main from '../components/Main';

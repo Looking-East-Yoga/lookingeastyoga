@@ -97,17 +97,17 @@ class Header extends React.Component {
         `;
         return (
           <StyledHeader role="banner" styles={styles}>
-              {title == undefined &&
-                <img src="/assets/graphics/lookingeastyoga-logo.png"/>
+              {title === undefined &&
+                <img src="/assets/graphics/lookingeastyoga-logo.png" alt="Looking East Yoga"/>
               }
-              {title !== undefined || logo == false &&
-                <img className="small" src="/assets/graphics/lookingeastyoga-logo.png"/>
+              {title !== undefined || logo === false &&
+                <img className="small" src="/assets/graphics/lookingeastyoga-logo.png" alt="Looking East Yoga"/>
               }
               {title !== undefined &&
                 <div className="title" dangerouslySetInnerHTML={{__html:title}} />
               }
               <span>
-                <img src={background}/>
+                <img src={background} alt=""/>
               </span>
               {this.props.children}
           </StyledHeader>

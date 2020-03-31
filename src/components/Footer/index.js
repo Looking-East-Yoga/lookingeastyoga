@@ -35,7 +35,7 @@ class Footer extends React.Component {
         return (
           <StyledFooter role="contentinfo">
 			{logo !== undefined && logo !== false &&
-				<div className="logo"><Link to="/"><img src={logo} /></Link></div>
+				<div className="logo"><Link to="/"><img src={logo} alt="Looking East Yoga Logo" /></Link></div>
 			}
             <h2>
               “If you work on Yoga, Yoga will work on you.”
