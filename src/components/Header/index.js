@@ -100,7 +100,7 @@ class Header extends React.Component {
               {title === undefined &&
                 <img src="/assets/graphics/lookingeastyoga-logo.png" alt="Looking East Yoga"/>
               }
-              {title !== undefined || logo === false &&
+              {(title !== undefined && logo === false) &&
                 <img className="small" src="/assets/graphics/lookingeastyoga-logo.png" alt="Looking East Yoga"/>
               }
               {title !== undefined &&
